@@ -1,0 +1,38 @@
+boolean ifOneAway(String a, String b){
+    int[] table = new int[26];
+    int countMinusOne = 0;
+    int countOne = 0;
+    int countOther = 0;
+    for(char c : a.toCharArray()){
+        int x = getCharValue(c);
+        if(x != -1){
+            table[x] ++ ;
+        }
+    }
+    for(char c : b.toCharArray()){
+        int y = getCharValue(c);
+        if(x != -1){
+            table[x] --;
+        }
+    }
+    for(int i = 0; i<26; i++){
+        if(table[x] == 1){
+            countOne ++;
+        }else if(table[x] == -1){
+            countMinusOne ++;
+        }else{
+            countOther ++;
+        }
+    }
+    return (countOther == 0 && (countOne == 1&&countMinus == 0 || countOne == 0&&countMinus == 1 || countOne == 1&&countMinus == 1))
+}
+
+int getCharValue(c){
+    int a = Character.getNumericValue('a');
+    int z = Character.getNumericValue('z');
+    int v = Character.getNumericValue('c');
+    if(v<=z && v>=a){
+        return z-v;
+    }
+    return -1;
+}
