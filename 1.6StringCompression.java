@@ -1,3 +1,4 @@
+import java.lang.StringBuilder;
 public class HelloWorld{
 
     public static void main(String []args){
@@ -39,5 +40,30 @@ public class HelloWorld{
 链接：https://www.zhihu.com/question/20101840/answer/18901280
 来源：知乎
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。*/
+//second attempt
+    public static String stringCompression(String s){
+        if(s == null || s.length() <=1 ){
+            return s;
+        }
+        StringBuilder compS = new StringBuilder();
+        compS.append(s.charAt(0));
+        int count = 1;
+        int num = 0;
+        for(int i = 1; i < s.length(); i++){
+            if(s.charAt(i) == s.charAt(i-1)){
+                count ++;
+            }else{
+                if(count > 1) num ++;
+                compS.append(count);
+                compS.append(s.charAt(i));
+                count = 1;
+            }
+            if(i == s.length()-1){
+                compS.append(count);
+            }
+        }
+        if(num > 0) return compS;
+        return s;
+    }
     
 }
