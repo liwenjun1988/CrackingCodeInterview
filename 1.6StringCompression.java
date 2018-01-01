@@ -62,7 +62,7 @@ public class HelloWorld{
                 compS.append(count);
             }
         }
-        if(num > 0) return compS;
+        if(num > 0) return compS.toString();
         return s;
     }
     
