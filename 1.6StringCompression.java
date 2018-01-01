@@ -4,6 +4,8 @@ public class HelloWorld{
         System.out.println(stringCompression("aaabbbcccccaddbb"));
         System.out.println(stringCompression("asdibad"));
         System.out.println(stringCompression("AaBBbccC"));
+        System.out.println(stringCompression("a"));
+        System.out.println(stringCompression("difentt"));
      }
     
     public static String stringCompression(String s){
